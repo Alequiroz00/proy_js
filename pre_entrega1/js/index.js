@@ -31,6 +31,10 @@ seguro de equipaje: 50usd
 let destino 
 let numDestino = parseInt(prompt("Seleccione el numero correspondiente al destino deseado: 1- Playa del Carmen; 2- Rio de Janeiro; 3- Miami; 4- Ibiza"))
 
+function convertirMinusculas(variable) {
+    return variable.toLowerCase();
+}
+
 
 while(numDestino<1 || numDestino>4 || isNaN(numDestino)){
     numDestino = parseInt(prompt("El valor ingresado es incorrecto, por favor seleccione una opcion válida. 1- Playa del Carmen; 2- Rio de Janeiro; 3- Miami; 4- Ibiza"))
@@ -44,7 +48,8 @@ if(numDestino === 1){
 }else if(numDestino ===4){
     destino = "Ibiza"
 }
-console.log("El destino elegido es", destino)
+console.log("El destino elegido es", destino);
+
 
 let tarifa 
 if(numDestino === 1){
@@ -60,7 +65,7 @@ if(numDestino === 1){
 console.log("La tarifa base x persona para el destino elegido es $"+ tarifa+ " usd y esto incluye hotel 3 estrellas, desayuno, traslado del aeropuerto/terminal al hotel, asistencia al viajero durante todo el viaje")
 
 let vuelo = prompt("Desea contratar el vuelo con nosotros? Responda con si o no.")
-vuelo = vuelo.toLowerCase()
+vuelo = convertirMinusculas(vuelo)
 while(vuelo!="si" && vuelo!="no"){
     vuelo = prompt("El valor ingresado es incorrecto. Desea contratar el vuelo con nosotros? Responda con si o no.");
     vuelo = vuelo.toLowerCase()
@@ -80,7 +85,7 @@ if(vuelo == "si"){
 }
 
 let seguroEquipaje = prompt("De momento hay una promocion exclusiva para asegurar su equipaje por solo 30usd extras, le gustaria aprovecharla? Responda con si o no.")
-seguroEquipaje = seguroEquipaje.toLowerCase()
+seguroEquipaje = convertirMinusculas(seguroEquipaje)
 
 while(seguroEquipaje!="si" && seguroEquipaje!="no"){
     seguroEquipaje = prompt("El valor ingresado es incorrecto. Quiere aprovechar la promocion para asegurar su equipaje por 30usd extras? Responda con si o no.");
@@ -96,7 +101,7 @@ if(seguroEquipaje =="si"){
 // console.log("De momento su tarifa es de $"+ tarifa, "usd")
 
 let excursiones = prompt("Le gustaria contratar excursiones por un extra de 50usd c/u? Responda con si o no.")
-excursiones = excursiones.toLowerCase()
+excursiones = convertirMinusculas(excursiones)
 
 while(excursiones!="si" && excursiones!="no"){
     excursiones = prompt("El valor ingresado es incorrecto. Le gustaria contratar excursiones por un extra de 50usd c/u? Responda con si o no.");
@@ -120,7 +125,7 @@ if(excursiones == "si"){
 }
 
 let  comidas = prompt("Por un adicional de 50usd puede contratar la pension completa que incluye almuerzo y cena, esta interesado en agregarlo? Responda si o no.")
-comidas = comidas.toLowerCase();
+comidas = convertirMinusculas(comidas)
 
 while(comidas!="si" &&comidas!="no"){
     comidas = prompt("El valor ingresado es incorrecto. Le gustaria contratar la pension completa por 50usd adicionales? Responda con si o no.");
