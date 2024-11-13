@@ -99,15 +99,39 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     const DESTINOSCONTAINER = document.getElementById('DESTINOS');
-    DESTINOS.forEach(destino => {
-        const cardDestino = document.createElement('article');
-        cardDestino.innerHTML = `
-            <h3>${destino.lugar}</h2>
-            <p>${destino.texto}</p>
-            <button onclick="verFormulario('${destino.lugar}')">Reservar</button>
-        `;
-        DESTINOSCONTAINER.appendChild(cardDestino);
-    });
+    const card1 = document.createElement('article');
+    card1.className='card1'
+    card1.innerHTML=`
+        <h3>${DESTINOS[0].lugar}</h3>
+        <p>${DESTINOS[0].texto}</p>
+        <button onclick="verFormulario('${DESTINOS[0].lugar}')">Reservar</button>
+    `
+    const card2 = document.createElement('article');
+    card2.className='card2'
+    card2.innerHTML=`
+        <h3>${DESTINOS[1].lugar}</h3>
+        <p>${DESTINOS[1].texto}</p>
+        <button onclick="verFormulario('${DESTINOS[1].lugar}')">Reservar</button>
+    `
+    const card3 = document.createElement('article');
+    card3.className='card3'
+    card3.innerHTML=`
+        <h3>${DESTINOS[2].lugar}</h3>
+        <p>${DESTINOS[2].texto}</p>
+        <button onclick="verFormulario('${DESTINOS[2].lugar}')">Reservar</button>
+    `
+    const card4 = document.createElement('article');
+    card4.className='card4'
+    card4.innerHTML=`
+        <h3>${DESTINOS[3].lugar}</h3>
+        <p>${DESTINOS[3].texto}</p>
+        <button onclick="verFormulario('${DESTINOS[3].lugar}')">Reservar</button>
+    `
+DESTINOSCONTAINER.appendChild(card1);
+DESTINOSCONTAINER.appendChild(card2);
+DESTINOSCONTAINER.appendChild(card3);
+DESTINOSCONTAINER.appendChild(card4);
+
 });
 
 

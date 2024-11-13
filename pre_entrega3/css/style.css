@@ -89,9 +89,13 @@ main{
     width: 90%; 
     justify-content: center;
 }
+main h2{
+    justify-content: center;
+}
 h2{
     display: flex;
     justify-content: center;
+    justify-self: center;
     align-items: center;
     color: rgb(255, 255, 255);
     width: 700px;
