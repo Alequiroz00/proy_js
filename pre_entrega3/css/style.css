@@ -1,135 +1,304 @@
-*{
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
-ul{
-    list-style: none;
+ul {
+  list-style: none;
 }
-ul li a{
-    text-decoration: none;
-    color: white;
+ul li a {
+  text-decoration: none;
+  color: white;
 }
-
 
 body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); 
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .imgFondo {
-    position: absolute;
+    position: fixed; /* Cambiado de absolute a fixed para que permanezca al hacer scroll */
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('../assets/img1.jpg') no-repeat center center;
-    background-size: cover; 
-    opacity: 0.7; 
-    z-index: -1; 
-}
-header, main, footer {
-    position: relative;
-    z-index: 1; 
-    color: white; 
-    padding: 20px;
-    width: 100%;
-    /* text-align: center;  */
+    width: 100%; /* Asegura que cubra todo el ancho */
+    height: 100%; /* Asegura que cubra toda la altura */
+    background: url("../assets/img1.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: 0.7; /* Transparencia */
+    z-index: -1; /* Mantiene el fondo detrás del contenido */
+  }
+  
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  /* text-align: center;  */
 }
 
-header{
-    display: grid;
-    grid-template-rows: repeat(2,1fr);
-    grid-template-columns: 20% 80%;
-    align-items: center;
-    row-gap: 10px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5); 
+header {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  row-gap: 10px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.navbar ul{
-    display:grid
+.navbar ul {
+  display: grid;
 }
-header p{
-    display: inline;
-    font-size: 2rem;
-    grid-column: 1/2;
-    grid-row: 1/2;
+header p {
+  display: inline;
+  font-size: 2rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
-.inic{
-    grid-column: 2/3;
-    grid-row: 1/2;
+.inic {
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
-.paq{
-    grid-column: 3/4;
-    grid-row: 1/2;
+.paq {
+  grid-column: 3/4;
+  grid-row: 1/2;
 }
-.gal{
-    grid-column:4/5 ;
-    grid-row: 1/2;
+.gal {
+  grid-column: 4/5;
+  grid-row: 1/2;
 }
-.nos{
-    grid-column: 5/6;
-    grid-row: 1/2;
+.nos {
+  grid-column: 5/6;
+  grid-row: 1/2;
 }
-.cont{
-    grid-column: 6/7;
-    grid-row: 1/2;
+.cont {
+  grid-column: 6/7;
+  grid-row: 1/2;
 }
-h1{
-    grid-column:1/7 ;
-    grid-row: 2/3;
+h1 {
+  grid-column: 1/7;
+  grid-row: 2/3;
 }
-main{
-    /* display: flex; */
-    margin-top: 20px;
-    width: 90%; 
-    justify-content: center;
+main {
+  /* display: flex; */
+  margin-top: 20px;
+  width: 90%;
+  justify-content: center;
 }
-main h2{
-    justify-content: center;
+main h2 {
+  justify-content: center;
 }
-h2{
-    display: flex;
-    justify-content: center;
-    justify-self: center;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    width: 700px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
+h2 {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  width: 700px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.contenedorCards{
-    display: grid;
-    grid-template-columns: repeat(1,500px);
-    grid-template-rows: repeat(4,300px);
-    row-gap: 20px;
-    column-gap: 20px;
-    grid-template-areas: 
+.contenedorCards {
+  display: grid;
+  grid-template-columns: repeat(1, 500px);
+  grid-template-rows: repeat(4, 300px);
+  row-gap: 20px;
+  column-gap: 20px;
+  grid-template-areas:
     "card1"
     "card2"
     "card3"
-    "card4"
-    ;
-    margin-top: 30px;
-    justify-content: center;
+    "card4";
+  margin-top: 30px;
+  justify-content: center;
 }
-.card1{
-    grid-area: card1;
-    background-color:rgba(0, 0, 0, 0.5);
+.card1 {
+  grid-area: card1;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.card2{
-    grid-area: card2;
-    background-color:rgba(0, 0, 0, 0.5);
+.card2 {
+  grid-area: card2;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.card3{
-    grid-area: card3;
-    background-color:rgba(0, 0, 0, 0.5);
+.card3 {
+  grid-area: card3;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.card4{
-    grid-area: card4;
-    background-color:rgba(0, 0, 0, 0.5);
+.card4 {
+  grid-area: card4;
+  background-color: rgba(0, 0, 0, 0.5);
 }
+#formularioReserva {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    color: white;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Título del formulario */
+#formularioReserva h3 {
+    font-size: 1.8rem;
+    color: #00d4ff;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Etiquetas del formulario */
+#formularioReserva label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Inputs del formulario */
+#formularioReserva input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+#formularioReserva input:focus {
+    border-color: #00d4ff;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(0, 212, 255, 0.8);
+}
+
+/* Botón de guardar */
+#formularioReserva button {
+    background-color: #00d4ff;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#formularioReserva button:hover {
+    background-color: #009fc4;
+    transform: scale(1.05);
+}
+
+/* Animación al mostrar el formulario */
+#formularioReserva.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+#formularioReserva:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Detalles de reserva */
+#detalles {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor de las tarjetas */
+.contenedorCards {
+    display: block; /* Cambia de flex a bloque */
+    margin: 30px auto;
+    padding: 10px;
+  }
+  
+  /* Estilo general para cada tarjeta */
+  article {
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+    overflow: hidden;
+    width: 90%; /* Ocupa casi todo el ancho disponible */
+    max-width: 25rem; /* Ancho máximo */
+    margin: 20px auto; /* Margen superior e inferior */
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  article:hover {
+    transform: scale(1.02); /* Agranda la tarjeta al pasar el mouse */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+  }
+  
+  /* Títulos de las ciudades */
+  article h3 {
+    font-size: 2rem; /* Títulos más grandes */
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Texto con sombra */
+  }
+  
+  /* Descripciones */
+  article p {
+    font-size: 1.2rem; /* Texto más grande */
+    color: #f0f0f0;
+    margin-bottom: 20px;
+    line-height: 1.6; /* Espaciado entre líneas */
+  }
+  
+  /* Botón de reserva */
+  article button {
+    background: #ff6f61; /* Color llamativo */
+    color: #fff;
+    font-size: 1.2rem; /* Botón más grande */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  article button:hover {
+    background: #ff3e2e; /* Color más oscuro al pasar el mouse */
+  }
+  
+  /* Sección de clima */
+  .clima {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Mensaje de error para clima */
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
